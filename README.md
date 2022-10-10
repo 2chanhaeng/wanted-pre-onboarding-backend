@@ -33,3 +33,23 @@
     -   로그인 등 사용자 인증절차
     -   Frontend 요소
     -   이외 명시되지 않은 조건
+
+# DB 모델
+
+```mermaid
+erDiagram
+    COMPANY {
+        id int
+        notice int
+    }
+    USER {
+        id int
+    }
+    NOTICE {
+        id int
+        company int
+        applicant int
+    }
+    COMPANY ||--o{ NOTICE : wanted
+    NOTICE }o--o{ USER : apply
+```
