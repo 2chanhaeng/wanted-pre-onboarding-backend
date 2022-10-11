@@ -36,20 +36,58 @@
 
 # DB 모델
 
+-   COMPANY
+    |attr|type|
+    |---|---|
+    |id|`int`, `primary`|
+    |name|`string`|
+    |signed|`date`|
+-   USER
+    |attr|type|
+    |---|---|
+    |id|`int`, `primary`|
+    |name|`string`|
+    |signed|`date`|
+-   NOTICE
+    |attr|type|
+    |---|---|
+    |id|`int`, `primary`|
+    |name|`string`|
+    |signed|`date`|
+    |compay|`int`|
+-   APPLICATION
+    |attr|type|
+    |---|---|
+    |id|`int`, `primary`|
+    |applied|`date`|
+    |notice|`int`|
+    |user|`int`|
+
 ```mermaid
 erDiagram
     COMPANY {
         id int
-        notice int
+        name string
+        signed date
     }
     USER {
         id int
+        name string
+        signed date
     }
     NOTICE {
         id int
+        name string
+        posted date
         company int
-        applicant int
     }
-    COMPANY ||--o{ NOTICE : wanted
-    NOTICE }o--o{ USER : apply
+    APPLICATION {
+        id int
+        applied date
+        notice int
+        user int
+    }
+    COMPANY ||--o{ NOTICE : post
+    NOTICE ||--o{ APPLICATION : applied
+    USER ||--o{ APPLICATION : apply
 ```
