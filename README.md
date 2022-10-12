@@ -54,7 +54,7 @@
     |id|`int`, `primary`|
     |name|`string`|
     |signed|`date`|
-    |compay|`int`|
+    |company|`int`|
 -   APPLICATION
     |attr|type|
     |---|---|
