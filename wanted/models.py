@@ -23,5 +23,5 @@ class Notice(models.Model):
 class Application(models.Model):
     id = models.BigAutoField(primary_key=True)
     date = models.DateTimeField(auto_now_add=True)
-    notice = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="application")
+    notice = models.ForeignKey(Notice, on_delete=models.CASCADE, related_name="application")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="application")
