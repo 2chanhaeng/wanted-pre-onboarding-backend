@@ -46,12 +46,14 @@
     |id|`int`, `primary`|
     |name|`string`|
     |signed|`date`|
+    |info|`string`|
 -   USER
     |attr|type|
     |---|---|
     |id|`int`, `primary`|
     |name|`string`|
     |signed|`date`|
+    |info|`string`|
 -   NOTICE
     |attr|type|
     |---|---|
@@ -59,6 +61,7 @@
     |name|`string`|
     |signed|`date`|
     |company|`int`|
+    |info|`string`|
 -   APPLICATION
     |attr|type|
     |---|---|
@@ -72,18 +75,21 @@ erDiagram
     COMPANY {
         id int
         name string
-        signed date
+        date date
+        info string
     }
     USER {
         id int
         name string
-        signed date
+        date date
+        info string
     }
     NOTICE {
         id int
         name string
-        posted date
+        date date
         company int
+        info string
     }
     APPLICATION {
         id int
