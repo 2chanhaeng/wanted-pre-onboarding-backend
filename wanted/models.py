@@ -5,12 +5,14 @@ class Company(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=256)
     date = models.DateTimeField(auto_now_add=True)
+    info = models.TextField(null=True, blank=True)
 
 
 class User(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=256)
     date = models.DateTimeField(auto_now_add=True)
+    info = models.TextField(null=True, blank=True)
 
 
 class Notice(models.Model):
@@ -18,6 +20,7 @@ class Notice(models.Model):
     name = models.CharField(max_length=256)
     date = models.DateTimeField(auto_now_add=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    info = models.TextField(null=True, blank=True)
 
 
 class Application(models.Model):
